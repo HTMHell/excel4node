@@ -43,8 +43,8 @@ class Picture extends Drawing {
 
         const size = imgsz(this.imagePath || this.image);
 
-        this._pxWidth = size.width;
-        this._pxHeight = size.height;
+        this._pxWidth = opts.size?.width || size.width;
+        this._pxHeight = opts.size?.height || size.height;
 
         this._extension = this.image ?
             size.type :

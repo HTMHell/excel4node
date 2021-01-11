@@ -248,6 +248,8 @@ class Worksheet {
      * @param {String} opts.name Name of image
      * @param {String} opts.type Type of image. Currently only 'picture' is supported
      * @param {String} opts.rId rId of image.
+     * @param {Number} opts.size.width Image width
+     * @param {Number} opts.size.height Image height
      * @param {Object} opts.position Position object for image
      * @param {String} opts.position.type Type of positional anchor to use. One of 'absoluteAnchor', 'oneCellAnchor', 'twoCellAnchor'
      * @param {Object} opts.position.from Object containg position of top left corner of image.  Used with oneCellAnchor and twoCellAchor types
