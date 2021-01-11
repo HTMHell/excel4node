@@ -14,6 +14,9 @@ class DrawingCollection {
         switch (opts.type) {
         case 'picture':
             let newPic = new Picture(opts);
+            if (opts.rId) {
+                newPic.rId = opts.rId;
+            }
             this.drawings.push(newPic);
             return newPic;
 
