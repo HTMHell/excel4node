@@ -532,9 +532,12 @@ let addDrawingsXML = (promiseObj) => {
             .att('xmlns:a', 'http://schemas.openxmlformats.org/drawingml/2006/main')
             .att('xmlns:xdr', 'http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing');
 
+          const rIds = new Set();
+
           ws.drawingCollection.drawings.forEach((d) => {
 
-            if (d.kind === 'image') {
+            if (d.kind === 'image' && !rIds.has(d.rId)) {
+              rIds.add(d.rId);
               let target = 'image' + d.id + '.' + d.extension;
 
               let image = d.imagePath ? fs.readFileSync(d.imagePath) : d.image;
