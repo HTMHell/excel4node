@@ -532,7 +532,7 @@ let addDrawingsXML = (promiseObj) => {
             .att('xmlns:a', 'http://schemas.openxmlformats.org/drawingml/2006/main')
             .att('xmlns:xdr', 'http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing');
 
-          const rIds = new Set();
+          let rIds = new Set();
 
           ws.drawingCollection.drawings.forEach((d) => {
 
